@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Layout extends Component {
+export default class StatefulLayout extends Component {
   constructor () {
     super()
     this.state = {}
