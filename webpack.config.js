@@ -9,7 +9,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-  entry:['babel-polyfill', './app/index.js'],
+  entry: './app/index.js',
   devtool: 'eval-source-map',
   output: {
     path: __dirname + '/dist',
@@ -22,13 +22,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets:[
-            '@babel/preset-react',
-            '@babel/preset-env'
-          ]
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
