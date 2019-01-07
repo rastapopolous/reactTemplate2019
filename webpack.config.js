@@ -34,9 +34,7 @@ module.exports = {
     HTMLWebpackPluginConfig,
     new Webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [
-          Autoprefixer()
-        ]
+        postcss: [Autoprefixer()]
       }
     })
   ]
