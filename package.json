@@ -1,7 +1,7 @@
 {
   "name": "reacttemplate2018",
   "version": "1.0.0",
-  "description": "**>>node-sass must be installed globally to run atom sass-autocompile",
+    "description": "**>>node-sass must be installed globally & locally(?)to run atom sass-autocompile",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p",
