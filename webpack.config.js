@@ -1,15 +1,15 @@
-const Webpack = require('webpack')
-const Autoprefixer = require('autoprefixer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Webpack = require('webpack');
+const Autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/app/index.html',
+  template: __dirname + '/public/index.html',
   filename: 'index.html',
   inject: 'body'
-})
+});
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './src/index.js',
   devtool: 'eval-source-map',
   output: {
     path: __dirname + '/dist',
@@ -38,4 +38,4 @@ module.exports = {
       }
     })
   ]
-}
+};
