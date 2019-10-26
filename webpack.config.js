@@ -11,6 +11,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: './src/index.js',
   devtool: 'eval-source-map',
+  watch: true,
   output: {
     path: __dirname + '/dist',
     //path: './app', modified for htmlWebpackPlugin
@@ -25,7 +26,7 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
