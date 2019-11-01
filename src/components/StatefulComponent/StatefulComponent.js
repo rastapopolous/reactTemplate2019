@@ -1,5 +1,7 @@
 import React, { Component } from 'react';;
 import {} from 'prop-types';
+import './stateful.css';
+import './stayedfull.scss'
 
 export default class StatefulComponent extends Component {
   static propTypes = {}

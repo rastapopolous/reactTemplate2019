@@ -1,12 +1,13 @@
 {
-  "name": "reacttemplate2019",
+  "name": "reactTemplate2019",
   "version": "1.0.0",
   "description": "**>>node-sass must be installed globally & locally(?)to run atom sass-autocompile",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack -p",
     "start": "webpack-dev-server",
-    "test": "jest"
+    "devbuild": "webpack --watch --mode=development",
+    "prodbuild": "webpack --mode=production --optimize-minimize",
+    "test": "jest -- --watch"
   },
   "jest": {
     "snapshotSerializers": [
@@ -35,7 +36,7 @@
     "babel-eslint": "^9.0.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
-    "css-loader": "^1.0.0",
+    "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
@@ -44,16 +45,17 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^4.0.0-beta.8",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
-    "node": "^10.7.0",
-    "node-sass": "^4.12.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node": "^12.12.0",
+    "node-sass": "^4.13.0",
     "react-test-renderer": "^16.9.0",
-    "sass": "^1.10.1",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.23.3",
+    "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "webpack": "^4.16.3",
+    "webpack": "^4.41.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.14"
   },
@@ -66,7 +68,9 @@
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.4.2",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^4.3.1",
+    "redux": "^4.0.4",
     "styled-components": "^4.2.0"
   }
 }

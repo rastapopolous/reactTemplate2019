@@ -1,42 +1,41 @@
-const Webpack = require('webpack');
-const Autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/public/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
-  entry: './src/index.js',
   devtool: 'eval-source-map',
-  watch: true,
+  entry: './src/index.js',
   output: {
     path: __dirname + '/dist',
-    //path: './app', modified for htmlWebpackPlugin
     filename: 'index_bundle.js'
   },
-  mode: 'development',
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: "babel-loader"
+        }
       },
+      //miniCssExtractPlugin will output css as a separate file, useful for prod
+      //(see destination file in new miniCssExtractPlugin constructor below)
+      //Style-loader will bundle css with js
       {
         test: /\.(css|scss)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader',  'sass-loader']
       }
     ]
   },
   plugins: [
-    HTMLWebpackPluginConfig,
-    new Webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [Autoprefixer()]
-      }
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      hash: false,
+      template: __dirname + '/public/index.html',
+      filename: 'index.html'
+    }),
+     new MiniCssExtractPlugin({
+      filename: '[name].css'
     })
   ]
 };
+
